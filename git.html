@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Niswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+
+            <div class="text">
+                <div class="text">NISWA</div>
+            </div>
+        </div>
+
+    
+
+
+    <form id="submit-form" class="form-center"  action="">
+        <h1 class="reg">Registration</h1>
+        
+        <div class="form-element">
+            <span class="tname"></span>
+            <input type="text" name="Name" placeholder="Name" class="lname">
+
+        </div>
+        <div class="form-element">
+            <span class="tname"></span>
+            <input type="text" name="Phone number" placeholder="Mobile number" class="lname">
+
+        </div>
+        
+        <div class="form-box">
+            <span class="program">program</span><br>
+            <input type="checkbox"  name="Essay writing (Malayalam)" value="Essay writing (Malayalam)" >
+            <label for="vehicle1" > Essay writing (Malayalam)</label><br>
+            <input type="checkbox"  name="Essay writiing (English" value="Essay writiing (English">
+            <label for="vehicle2"> Essay writiing (English)</label><br>
+            <input type="checkbox"  name="കവിതാ രചന (മലയാളം" value="കവിതാ രചന (മലയാളം)">
+            <label for="vehicle3"> കവിതാ രചന (മലയാളം)</label><br>
+            <input type="checkbox"  name="കവിതാ രചന (ഇംഗ്ലീഷ്)" value="കവിതാ രചന (ഇംഗ്ലീഷ്)">
+            <label for="vehicle3"> കവിതാ രചന (ഇംഗ്ലീഷ്)</label><br>
+            <input type="checkbox"  name="കാലിഗ്രാഫി (അറബി)" value="കാലിഗ്രാഫി (അറബി)">
+            <label for="vehicle3"> കാലിഗ്രാഫി (അറബി)</label><br>
+            <input type="checkbox"  name="പെൻസിൽ ഡ്രോയിങ്" value="പെൻസിൽ ഡ്രോയിങ്">
+            <label for="vehicle3"> പെൻസിൽ ഡ്രോയിങ്</label><br>
+            <input type="checkbox"  name="ചിത്ര തുന്നൽ" value="ചിത്ര തുന്നൽ">
+            <label for="vehicle3"> ചിത്ര തുന്നൽ</label><br>
+            <input type="checkbox"  name="കഥ രചന" value="കഥ രചന">
+            <label for="vehicle3"> കഥ രചന</label>
+            
+        </div>
+        <div class="button">
+        <button class="sub-btn" type="submit">Submit</button>
+         </div>
+        <script>
+            $("#submit-form").submit((e)=>{
+                e.preventDefault()
+                $.ajax({
+                    url:"https://script.google.com/macros/s/AKfycbyEYQLVDFoetX8WqmIb_-kpvGQxJCCrJKzdplBn6OPx45fhWBTsB4mrEIgVIXEn0Oh7yg/exec",
+                    data:$("#submit-form").serialize(),
+                    method:"post",
+                    success:function (response){
+                        alert("Form submitted successfully")
+                        window.location.reload()
+                        //window.location.href="https://google.com"
+                    },
+                    error:function (err){
+                        alert("Something Error")
+        
+                    }
+                })
+            })
+        </script>
+
+
+
+    </form>
+
+   </div>
+
+</body>
+</html>
